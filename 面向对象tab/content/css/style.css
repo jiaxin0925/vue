@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#tab,
+#tab2 {
+    width: 600px;
+    margin: 50px auto 0;
+}
+
+#title {
+    overflow: hidden;
+}
+
+#title span {
+    float: left;
+    width: 199px;
+    height: 30px;
+    border-right: 1px solid #EAEAEA;
+    line-height: 30px;
+    font-size: 22px;
+    color: #333333;
+    background: #FCFCFC;
+    cursor: pointer;
+}
+
+#content {
+    height: 200px;
+    overflow: hidden;
+    background: #C8BBF8;
+}
+
+#content li {
+    height: 200px;
+    line-height: 200px;
+    font-size: 80px;
+    display: none;
+}
+
+/*默认样式&点击后样式*/
+
+#title .select {
+    color: #FFFFFF;
+    background: #0AA770;
+}
+
+#content .show {
+    display: block;
+}
