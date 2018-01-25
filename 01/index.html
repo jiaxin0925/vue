@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "box">
+                
+    </div>
+    <script src="ajax.js"></script>
+    <script src="loadImageAsync.js"></script>
+    <script>
+        var div = document.getElementsByName('div');
+
+        ajax({
+            url:'./json.json',
+            method:'GET'
+        })
+        .then(function(result){
+            console.log(result);
+            div.innerHtml = result;
+            console.log(div.innerHtml)
+
+        }, function(error){
+            console.log(error);
+        })
+
+        loadImageAsync('./img/1.jpg').then((image)=>{
+            box.appendChild(image)
+        },(error)=>{
+            throw new Error(error)
+        })
+
+        // 加载多张图片
+        loadImagesAsync('./img/1.jpg','./img/2.jpg','./img/3.jpg','./img/4.jpg','./img/5.jpg','./img/6.jpg').then((imageArr)=>{
+           for(let image of imageArr){
+               box.appendChild(image)
+           }
+        },(error)=>{
+            throw new Error(error)
+        })
+    </script>
+</body>
+</html>
